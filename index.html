@@ -1,192 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DevX Nepal — Coming Soon</title>
-<meta name="description" content="DevX Nepal is coming soon." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #f2f0eb;
-    --ink: #161512;
-    --muted: #6f6c63;
-    --line: rgba(22, 21, 18, 0.12);
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevX Nepal — Coming Soon</title>
+  <meta name="description" content="DevX Nepal is coming soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f2f0eb;
+      --ink: #161512;
+      --muted: #6f6c63;
+      --line: rgba(22, 21, 18, 0.12);
+    }
 
-  * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    min-height: 100svh;
-  }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100svh;
+    }
 
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100svh;
-    padding: 48px 20px;
-    text-align: center;
-  }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100svh;
+      padding: 48px 20px;
+      text-align: center;
+    }
 
-  .wrap {
-    width: 100%;
-    max-width: 960px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .wrap {
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  h1 {
-    margin: 0 0 16px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.02;
-    font-size: clamp(40px, 7vw, 84px);
-    opacity: 0;
-    animation: fadeUp 0.7s ease forwards;
-  }
+    h1 {
+      margin: 0 0 16px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+      font-size: clamp(40px, 7vw, 84px);
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
 
-  h1 span {
-    color: var(--muted);
-    font-weight: 500;
-  }
+    h1 span {
+      color: var(--muted);
+      font-weight: 500;
+    }
 
-  p.sub {
-    margin: 0 0 44px;
-    max-width: 520px;
-    font-size: clamp(15px, 1.6vw, 17px);
-    line-height: 1.6;
-    color: var(--muted);
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.08s forwards;
-  }
+    p.sub {
+      margin: 0 0 44px;
+      max-width: 520px;
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.6;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.08s forwards;
+    }
 
-  .video-shell {
-    position: relative;
-    width: 100%;
-    max-width: 860px;
-    aspect-ratio: 16 / 9;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #0c0c0b;
-    box-shadow: 0 30px 70px -25px rgba(22, 21, 18, 0.35), 0 0 0 1px var(--line);
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.16s forwards;
-  }
+    .video-shell {
+      position: relative;
+      width: 100%;
+      max-width: 860px;
+      aspect-ratio: 16 / 9;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0c0c0b;
+      box-shadow: 0 30px 70px -25px rgba(22, 21, 18, 0.35), 0 0 0 1px var(--line);
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.16s forwards;
+    }
 
-  video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    background: #0c0c0b;
-  }
+    video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background: #0c0c0b;
+    }
 
-  .sound-btn {
-    position: absolute;
-    right: 14px;
-    bottom: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    height: 34px;
-    padding: 0 14px;
-    border-radius: 999px;
-    background: rgba(12, 12, 11, 0.56);
-    backdrop-filter: blur(14px) saturate(180%);
-    -webkit-backdrop-filter: blur(14px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    color: #fff;
-    font-family: inherit;
-    font-size: 12.5px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    opacity: 0;
-    transform: translateY(4px);
-    pointer-events: none;
-    transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease, opacity 0.3s ease;
-  }
+    .sound-btn {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 34px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(12, 12, 11, 0.56);
+      backdrop-filter: blur(14px) saturate(180%);
+      -webkit-backdrop-filter: blur(14px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      opacity: 0;
+      transform: translateY(4px);
+      pointer-events: none;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease, opacity 0.3s ease;
+    }
 
-  .video-shell.ready .sound-btn {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
+    .video-shell.ready .sound-btn {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
 
-  .sound-btn:hover {
-    background: rgba(12, 12, 11, 0.72);
-    border-color: rgba(255, 255, 255, 0.24);
-  }
+    .sound-btn:hover {
+      background: rgba(12, 12, 11, 0.72);
+      border-color: rgba(255, 255, 255, 0.24);
+    }
 
-  .sound-btn:active {
-    transform: scale(0.96);
-  }
+    .sound-btn:active {
+      transform: scale(0.96);
+    }
 
-  .sound-btn svg {
-    width: 14px;
-    height: 14px;
-    fill: currentColor;
-    flex: none;
-  }
+    .sound-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+      flex: none;
+    }
 
-  .sound-btn .icon-off { display: block; }
-  .sound-btn .icon-on { display: none; }
+    .sound-btn .icon-off {
+      display: block;
+    }
 
-  .video-shell.unmuted .sound-btn .icon-off { display: none; }
-  .video-shell.unmuted .sound-btn .icon-on { display: block; }
+    .sound-btn .icon-on {
+      display: none;
+    }
 
-  footer {
-    margin-top: 40px;
-    font-size: 13px;
-    color: var(--muted);
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.24s forwards;
-  }
+    .video-shell.unmuted .sound-btn .icon-off {
+      display: none;
+    }
 
-  footer a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-  }
+    .video-shell.unmuted .sound-btn .icon-on {
+      display: block;
+    }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.24s forwards;
+    }
 
-  @media (max-width: 560px) {
-    .sound-btn { height: 32px; padding: 0 12px; font-size: 12px; }
-  }
-</style>
+    footer a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .sound-btn {
+        height: 32px;
+        padding: 0 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div class="wrap">
     <h1>Coming <span>soon.</span></h1>
-    <p class="sub">We're building something new. devxnepal.com launches shortly — take a look in the meantime.</p>
+    <p class="sub">We're building something new. devxbuilds.com launches shortly — take a look in the meantime.</p>
 
     <div class="video-shell" id="videoShell">
       <video id="video" loop playsinline preload="auto">
         <source src="assets/output-4.mp4" type="video/mp4" />
       </video>
       <button class="sound-btn" id="soundBtn" aria-label="Unmute video">
-        <svg class="icon-off" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4zm11.5 3c0-1.77-.77-3.29-2-4.29v8.56c1.23-1 2-2.5 2-4.27zm2.53-8.53l-1.42 1.42C18.32 6.29 19.5 9 19.5 12s-1.18 5.71-2.89 7.11l1.42 1.42C20.16 18.42 21.5 15.36 21.5 12s-1.34-6.42-3.47-8.53z"/></svg>
-        <svg class="icon-on" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-.77-3.29-2-4.29v8.56c1.23-1 2-2.5 2-4.27zM4 9v6h4l5 5V4L8 9H4z"/></svg>
+        <svg class="icon-off" viewBox="0 0 24 24">
+          <path
+            d="M4 9v6h4l5 5V4L8 9H4zm11.5 3c0-1.77-.77-3.29-2-4.29v8.56c1.23-1 2-2.5 2-4.27zm2.53-8.53l-1.42 1.42C18.32 6.29 19.5 9 19.5 12s-1.18 5.71-2.89 7.11l1.42 1.42C20.16 18.42 21.5 15.36 21.5 12s-1.34-6.42-3.47-8.53z" />
+        </svg>
+        <svg class="icon-on" viewBox="0 0 24 24">
+          <path d="M16.5 12c0-1.77-.77-3.29-2-4.29v8.56c1.23-1 2-2.5 2-4.27zM4 9v6h4l5 5V4L8 9H4z" />
+        </svg>
         <span id="soundLabel">Unmute</span>
       </button>
     </div>
 
-    <footer>&copy; 2026 DevX Nepal &middot; <a href="mailto:hello@devxnepal.com">hello@devxnepal.com</a></footer>
+    <footer>&copy; 2026 DevX Nepal &middot; <a href="mailto:hello@devxbuilds.com">hello@devxbuilds.com</a></footer>
   </div>
 
   <script>
@@ -236,9 +267,10 @@
     }
 
     soundBtn.addEventListener('click', () => {
-      video.play().catch(() => {});
+      video.play().catch(() => { });
       setMuted(!video.muted);
     });
   </script>
 </body>
+
 </html>
